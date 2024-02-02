@@ -1,5 +1,8 @@
 name: 'MaxMind GeoIP Updater'
 description: 'Download the latest version of a MaxMind GeoIP database'
+branding:
+  icon: arrow-down-circle
+  color: green
 inputs:
   account-id:
     description: 'Account ID associated with your MaxMind account. This are available from https://www.maxmind.com/en/my_license_key'
