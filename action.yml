@@ -1,0 +1,26 @@
+name: 'MaxMind GeoIP Updater'
+description: 'Download the latest version of a MaxMind GeoIP database'
+inputs:
+  account-id:
+    description: 'Account ID associated with your MaxMind account. This are available from https://www.maxmind.com/en/my_license_key'
+    required: true
+  license-key:
+    description: 'License key associated with your MaxMind account. This are available from https://www.maxmind.com/en/my_license_key'
+    required: true
+  edition-ids:
+    description: 'Enter the edition IDs of the databases you would like to update. Multiple edition IDs are separated by spaces.'
+    required: true
+  db-path:
+    description: 'Enter the workspace path to save databases in'
+    required: true
+    default: '.'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+  env:
+    GEOIPUPDATE_ACCOUNT_ID: ${{ inputs.account-id }}
+    GEOIPUPDATE_LICENSE_KEY: ${{ inputs.license-key }}
+    GEOIPUPDATE_EDITION_IDS: ${{ inputs.edition-ids }}
+    GEOIPUPDATE_DB_DIR: ${{ inputs.db-path }}
