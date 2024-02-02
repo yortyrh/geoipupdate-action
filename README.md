@@ -22,7 +22,7 @@ This action downloads the latest version of a MaxMind GeoIP database
 
 ## Example usage
 ```yaml
-uses: actions/geoipupdate-action@v3
+uses: actions/maxmind-geoip-updater@v5
 with:
   account-id: 'some account id'
   license-key: 'some license key'
