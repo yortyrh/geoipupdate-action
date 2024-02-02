@@ -16,9 +16,9 @@ This action downloads the latest version of a MaxMind GeoIP database
 
 **Required** Enter the edition IDs of the databases you would like to update. Multiple edition IDs are separated by spaces.
 
-## `path`
+## `dp-path`
 
-**Required** Enter the path to save databases in.
+**Required** Enter the workspace path to save databases in.
 
 ## Example usage
 ```yaml
@@ -27,4 +27,5 @@ with:
   account-id: 'some account id'
   license-key: 'some license key'
   edition-ids: 'GeoLite2-Country GeoLite2-City'
+  db-path: 'dbs'
 ```

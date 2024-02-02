@@ -10,6 +10,10 @@ inputs:
   edition-ids:
     description: 'Enter the edition IDs of the databases you would like to update. Multiple edition IDs are separated by spaces.'
     required: true
+  db-path:
+    description: 'Enter the workspace path to save databases in'
+    required: true
+    default: '.'
 
 runs:
   using: 'docker'
@@ -19,3 +23,4 @@ runs:
     GEOIPUPDATE_ACCOUNT_ID: ${{ inputs.account-id }}
     GEOIPUPDATE_LICENSE_KEY: ${{ inputs.license-key }}
     GEOIPUPDATE_EDITION_IDS: ${{ inputs.edition-ids }}
+    GEOIPUPDATE_DB_DIR: ${{ inputs.db-path }}

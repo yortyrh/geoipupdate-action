@@ -1,4 +1,4 @@
 #!/bin/sh -l
 
+mkdir -p "$GEOIPUPDATE_DB_DIR"
 /usr/bin/entry.sh
-chown -R "$(id -u):$(id -g)" .
