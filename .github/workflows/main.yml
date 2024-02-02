@@ -14,10 +14,9 @@ jobs:
         with:
           account-id: ${{ secrets.GEOIPUPDATE_ACCOUNT_ID }}
           license-key: ${{ secrets.GEOIPUPDATE_LICENSE_KEY }}
-          edition-ids: 'GeoLite2-ASN GeoLite2-City GeoLite2-Country'
+          edition-ids: 'GeoLite2-City'
           db-path: 'dbs'
 
       - name: List files
         run: |
           ls -l dbs
-          cat dbs/GeoLite2-City.mmdb
