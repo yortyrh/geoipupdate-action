@@ -22,10 +22,19 @@ This action downloads the latest version of a MaxMind GeoIP database
 
 ## Example usage
 ```yaml
-uses: actions/maxmind-geoip-updater@v3
-with:
-  account-id: 'some account id'
-  license-key: 'some license key'
-  edition-ids: 'GeoLite2-Country GeoLite2-City'
-  db-path: 'dbs'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: MaxMind GeoIP Updater
+        uses: yortyrh/geoipupdate-action@v4
+        with:
+          account-id: ${{ secrets.GEOIPUPDATE_ACCOUNT_ID }}
+          license-key: ${{ secrets.GEOIPUPDATE_LICENSE_KEY }}
+          edition-ids: 'GeoLite2-City'
+          db-path: 'dbs'
+
+      - name: List files
+        run: |
+          ls -l dbs
 ```
