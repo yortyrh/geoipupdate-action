@@ -8,8 +8,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Geo IP Update
-        uses: actions/maxmind-geoip-updater@v3
+
+      - name: MaxMind GeoIP Updater
+        uses: yortyrh/geoipupdate-action@v4
         id: updater
         with:
           account-id: ${{ secrets.GEOIPUPDATE_ACCOUNT_ID }}
