@@ -1,0 +1,20 @@
+on: [push]
+
+jobs:
+  updater:
+    runs-on: ubuntu-latest
+    name: Sample usage
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Geo IP Update
+        uses: ./
+        id: updater
+        with:
+          account-id: ${{ secrets.GEOIPUPDATE_ACCOUNT_ID }}
+          license-key: ${{ secrets.GEOIPUPDATE_LICENSE_KEY }}
+          edition-ids: 'GeoLite2-City'
+
+      - name: List files
+        run: ls -l

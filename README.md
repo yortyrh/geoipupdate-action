@@ -1,21 +1,30 @@
-# Hello world docker action
+# MaxMind GeoIP Updater
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action downloads the latest version of a MaxMind GeoIP database
 
 ## Inputs
 
-## `who-to-greet`
+## `account-id`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** Account ID associated with your MaxMind account. This are available from https://www.maxmind.com/en/my_license_key
 
-## Outputs
+## `license-key`
 
-## `time`
+**Required** License key associated with your MaxMind account. This are available from https://www.maxmind.com/en/my_license_key
 
-The time we greeted you.
+## `edition-ids`
+
+**Required** Enter the edition IDs of the databases you would like to update. Multiple edition IDs are separated by spaces.
+
+## `path`
+
+**Required** Enter the path to save databases in.
 
 ## Example usage
-
-uses: actions/hello-world-docker-action@v2
+```yaml
+uses: actions/geoipupdate-action@v2
 with:
-who-to-greet: 'Mona the Octocat'
+  account-id: 'some account id'
+  license-key: 'some license key'
+  edition-ids: 'GeoLite2-Country GeoLite2-City'
+```
