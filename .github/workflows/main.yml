@@ -14,7 +14,7 @@ jobs:
         with:
           account-id: ${{ secrets.GEOIPUPDATE_ACCOUNT_ID }}
           license-key: ${{ secrets.GEOIPUPDATE_LICENSE_KEY }}
-          edition-ids: 'GeoLite2-City'
+          edition-ids: 'GeoLite2-ASN GeoLite2-City GeoLite2-Country'
 
       - name: List files
         run: ls -l
