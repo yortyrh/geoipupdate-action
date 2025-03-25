@@ -89,7 +89,7 @@ on:
         uses: actions/checkout@v4
 
       - name: MaxMind GeoIP Updater
-        uses: yortyrh/geoipupdate-action@v6
+        uses: yortyrh/geoipupdate-action@v7
         with:
           account-id: ${{ secrets.GEOIPUPDATE_ACCOUNT_ID }}
           license-key: ${{ secrets.GEOIPUPDATE_LICENSE_KEY }}
