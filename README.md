@@ -1,6 +1,8 @@
 # MaxMind GeoIP Updater
 
-This action downloads the latest version of a MaxMind GeoIP database
+GitHub Action that downloads and updates MaxMind GeoIP databases (GeoLite2 / GeoIP2) in CI/CD workflows. Supports multiple editions, proxies, retries, parallel downloads and file-based secrets, so scheduled workflows can keep databases fresh.
+
+Jump to the [example usage](#example-usage).
 
 ## Inputs
 
@@ -100,3 +102,7 @@ on:
         run: |
           ls -l dbs
 ```
+
+---
+
+Maintained by [Yorty Ruiz Hernandez](https://yorty.info) · [GitHub](https://github.com/yortyrh) · [LinkedIn](https://www.linkedin.com/in/yorty)
